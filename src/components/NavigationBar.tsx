@@ -6,8 +6,8 @@ import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Product", href: "/features" },
-  { name: "About", href: "/pricing" },
+  { name: "Product", href: "./product" },
+  { name: "About", href: "./about" },
 ];
 
 export default function NavigationBar() {

@@ -1,11 +1,18 @@
-import React from "react";
+import AboutPage from "@/components/AboutPage";
+import Footer from "@/components/Footer";
+import NavigationBar from "@/components/NavigationBar";
 
-const page = () => {
+export const revalidate = false; // SSG: static page, no revalidation
+
+export default function Page() {
   return (
-    <div>
-      <h1>About</h1>
-    </div>
-  );
-};
+    <main className="font-mono w-full">
+      <NavigationBar />
+      <section>
+        <AboutPage />
+      </section>
 
-export default page;
+      <Footer />
+    </main>
+  );
+}

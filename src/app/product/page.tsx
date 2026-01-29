@@ -1,7 +1,7 @@
-//Ini CSR Pagenya
+//Ini CSR Page
 "use client";
 import { useEffect, useState } from "react";
-import React from "react";
+
 import axios from "axios";
 import { Product } from "@/types/product"; //Product Tipe Data Terpisah
 import NavigationBar from "@/components/NavigationBar";

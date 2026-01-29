@@ -1,4 +1,5 @@
 "use client";
+import CategoryPage from "@/components/CategoryPage";
 import Footer from "@/components/Footer";
 import HeroPage from "@/components/HeroPage";
 import NavigationBar from "@/components/NavigationBar";
@@ -13,19 +14,18 @@ export default function Home() {
         <section>
           <HeroPage />
         </section>
-        <section></section>
+        <section>
+          <CategoryPage />
+        </section>
         <Footer />
       </main>
     </>
   );
 }
 
-// Product / CSR
-// DetailProduct / SSR
 // About / SSG
 
 // Benerin Style Product Card
 // Tambah Category Card di Home
-// Buat Page Detail, Product
-// Buat Page About
+
 // README
