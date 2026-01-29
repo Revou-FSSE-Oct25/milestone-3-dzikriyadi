@@ -1,14 +1,87 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { Menu, ShoppingCart } from "lucide-react"; // Tambahkan ShoppingCart
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "./ThemeToggle";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Product", href: "./product" },
   { name: "About", href: "./about" },
 ];
+
+function CategoryItems() {
+  const [categories, setCategories] = useState<
+    | {
+        id: number;
+        name: string;
+      }[]
+    | null
+  >(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    async function load() {
+      try {
+        const res = await fetch("https://api.escuelajs.co/api/v1/categories");
+        if (!res.ok) throw new Error("Failed to fetch categories");
+        const data = await res.json();
+        if (!mounted) return;
+        setCategories(data || []);
+      } catch (err) {
+        if (!mounted) return;
+        setError(err instanceof Error ? err.message : String(err));
+      } finally {
+        if (!mounted) return;
+        setLoading(false);
+      }
+    }
+
+    load();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  if (loading) {
+    return (
+      <DropdownMenuItem className="opacity-60">Loading...</DropdownMenuItem>
+    );
+  }
+  if (error || !categories) {
+    return (
+      <DropdownMenuItem className="opacity-60">
+        Categories unavailable
+      </DropdownMenuItem>
+    );
+  }
+
+  return (
+    <>
+      {categories.map((cat) => (
+        <DropdownMenuItem key={cat.id} asChild>
+          <Link href={`/product?categoryId=${cat.id}`}>{cat.name}</Link>
+        </DropdownMenuItem>
+      ))}
+    </>
+  );
+}
 
 export default function NavigationBar() {
   return (
@@ -64,6 +137,18 @@ export default function NavigationBar() {
               {item.name}
             </Link>
           ))}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="transition-colors hover:text-primary focus:outline-none bg-transparent p-0">
+                Category
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuGroup>
+                <CategoryItems />
+              </DropdownMenuGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </nav>
 
         {/* --- BAGIAN KANAN: THEME, CART, LOGIN (Desktop) --- */}

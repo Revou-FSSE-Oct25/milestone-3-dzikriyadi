@@ -16,7 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
       : product.category;
 
   return (
-    <article className="rounded-lg border border-slate-800 p-4 flex flex-col h-full">
+    <article className="rounded-lg border border-white-800 p-4 flex flex-col h-full ">
       <Link href={`/product/${product.id}`} className="group">
         <div className="w-full h-48 flex items-center justify-center overflow-hidden rounded-md bg-slate-900">
           {imageUrl ? (
@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <img
               src={imageUrl}
               alt={product.name}
-              className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover md:h transition-transform duration-300 group-hover:scale-105 "
             />
           ) : (
             <div className="text-sm text-gray-500">No image</div>
@@ -43,10 +43,10 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
 
-      <div className="mt-4 pt-4 border-t border-slate-800">
+      <div className="mt-4 pt-4 border-t border-white-800">
         <Link
           href={`/product/${product.id}`}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-700 px-3 py-2 text-sm text-gray-200 hover:bg-white/5 transition"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white-700 px-3 py-2 text-sm text-gray-200 hover:bg-white/5 transition"
         >
           View Detail
         </Link>
