@@ -1,6 +1,6 @@
 # Deploy Link via Varcel
 
-## [Link Tugas Module 4](https://www.google.com)
+## [Link Tugas Module 4](https://milestone-3-dzikriyadi.vercel.app/)
 
 # Minimalist Ecommerce Store
 
