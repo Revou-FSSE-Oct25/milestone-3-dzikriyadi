@@ -7,11 +7,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import QuantitySelector from "@/app/product/components/QuantitySelector";
 
+//////////////////////////////
 interface ProductDetailPageProps {
   product: Product;
 }
+//////////////////////////////
 
 export default function ProductDetailPage({ product }: ProductDetailPageProps) {
+  //////////////////////////////
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
 
@@ -23,6 +26,7 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
     router.back();
   };
 
+  //////////////////////////////
   return (
     <div className="min-h-screen 0 ">
       {/* Top Navigation */}

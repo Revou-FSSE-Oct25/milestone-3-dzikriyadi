@@ -9,6 +9,9 @@ async function getAboutData(): Promise<AboutPageProps> {
   // Example: fetch from an API endpoint or CMS
   // For now, returning hardcoded data (which is also static)
   // You can replace this with: await fetch('https://api.example.com/about')
+
+  ////////////////
+
   return {
     title: "About this Website",
     description:

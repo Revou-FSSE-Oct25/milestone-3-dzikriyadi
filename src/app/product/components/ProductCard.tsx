@@ -1,15 +1,17 @@
 import Link from "next/link";
 import { Product } from "@/types/product";
 
-type ProductCardProps = {
+interface ProductCardProps {
   product: Product;
-};
+}
 
+//////////////////////
 export function ProductCard({ product }: ProductCardProps) {
+  ///////Handle Imagenya
   const imageUrl = Array.isArray(product.image)
     ? product.image[0]
     : product.image || product.images || "";
-
+  ///////Handle Categorynya
   const categoryName =
     typeof product.category === "object"
       ? product.category.name
@@ -20,7 +22,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <Link href={`/product/${product.id}`} className="group">
         <div className="w-full h-48 flex items-center justify-center overflow-hidden rounded-md bg-slate-900">
           {imageUrl ? (
-            // plain img keeps compatibility with external urls
+            /////////////////////////
             <img
               src={imageUrl}
               alt={product.title}

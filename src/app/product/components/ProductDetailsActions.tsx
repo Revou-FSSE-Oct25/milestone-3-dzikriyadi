@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import QuantitySelector from "@/app/product/components/QuantitySelector";
 
-type ProductDetailsActionsProps = {
+interface ProductDetailsActionsProps {
   productId: string;
   unitPrice: number;
-};
+}
 
 export default function ProductDetailsActions({
   productId,

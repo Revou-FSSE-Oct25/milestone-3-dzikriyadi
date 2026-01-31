@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import { use } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
+///////////// Fungsi DARMODE
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 

@@ -15,6 +15,7 @@ import {
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function CategoryPage() {
+  //1. Buat state untuk API response
   const [categoryList, setCategoryList] = useState<Category[] | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,6 +40,7 @@ function CategoryPage() {
     }
   };
 
+  //3. Run fetching function di dalam useEffect (supaya berjalan saat page load)
   useEffect(() => {
     fetchCategoryList();
   }, []);
@@ -46,6 +48,7 @@ function CategoryPage() {
   useEffect(() => {
     if (!api) return;
 
+    //Fungsi untuk Handle Control Carausel shadCN
     const updateButtonStates = () => {
       setCanScrollPrev(api.canScrollPrev());
       setCanScrollNext(api.canScrollNext());
@@ -60,7 +63,7 @@ function CategoryPage() {
       api.off("reInit", updateButtonStates);
     };
   }, [api]);
-
+  /////////////////////////
   return (
     <section className="w-full  py-12 md:py-20 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
@@ -71,7 +74,7 @@ function CategoryPage() {
           </h2>
 
           <p className="text-md  max-w-2xl mx-auto font-light">
-            Find the perfect device for your needs from our curated collections
+            Find the perfect Product for your needs from our curated collections
           </p>
         </div>
 

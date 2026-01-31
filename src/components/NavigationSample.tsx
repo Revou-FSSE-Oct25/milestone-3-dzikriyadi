@@ -1,3 +1,5 @@
+////// Contoh Template di dari ShadCN Template (Belum di Custom)
+
 "use client";
 
 import * as React from "react";

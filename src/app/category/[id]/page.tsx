@@ -11,12 +11,12 @@ import { useEffect, useState } from "react";
 
 export default function Page() {
   const params = useParams<{ id: string }>();
-  const router = useRouter();
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   // const [quantity, setQuantity] = useState(1);
 
+  //////////////////////
   useEffect(() => {
     console.log("the params is " + params.id);
     async function loadProduct() {
@@ -27,7 +27,9 @@ export default function Page() {
         setProducts(data);
       } catch (error) {
         const message =
-          error instanceof Error ? error.message : "Something went wrong";
+          error instanceof Error
+            ? error.message
+            : "Something went wrong, Try Again Leter";
         setErrorMessage(message);
       } finally {
         setIsLoading(false);
@@ -38,6 +40,7 @@ export default function Page() {
       loadProduct();
     }
   }, [params.id]);
+  //////////////////////
 
   return (
     <>

@@ -1,3 +1,4 @@
+//////////////////////////////
 export interface AboutPageProps {
   title: string;
   description: string;
@@ -10,6 +11,7 @@ export interface AboutPageProps {
   }[];
 }
 
+//////////////////////////////
 export default function AboutPage({
   title,
   description,

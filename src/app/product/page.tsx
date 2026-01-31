@@ -10,7 +10,7 @@ import Spinner from "@/components/Spinner";
 import Footer from "@/components/Footer";
 
 export default function PageProducts() {
-  // Handel API
+  //////// Handel API
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);

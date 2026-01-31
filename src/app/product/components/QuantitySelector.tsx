@@ -1,13 +1,13 @@
 import { Minus, Plus } from "lucide-react";
 import { calculateSubtotal, formatCurrency } from "@/lib/helpers";
 
-type QuantitySelectorProps = {
+interface QuantitySelectorProps {
   value: number;
   onChange: (value: number) => void;
   unitPrice?: number;
   min?: number;
   className?: string;
-};
+}
 
 export default function QuantitySelector({
   value,

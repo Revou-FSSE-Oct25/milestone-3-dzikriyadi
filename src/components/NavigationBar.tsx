@@ -12,17 +12,17 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+////////////////////////////////////
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Product", href: "/product" },
   { name: "About", href: "/about" },
 ];
 
+///////////////////////// Fungsi Menampilkan Category
 function CategoryItems() {
   const [categories, setCategories] = useState<
     | {
@@ -34,6 +34,7 @@ function CategoryItems() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  ///////////////////////// Contoh Memanggil Api Manual No Plugin (Axio)
   useEffect(() => {
     let mounted = true;
 
@@ -59,6 +60,8 @@ function CategoryItems() {
     };
   }, []);
 
+  /////////////////////////////////////// Handle Loading to Api
+
   if (loading) {
     return (
       <DropdownMenuItem className="opacity-60">Loading...</DropdownMenuItem>
@@ -71,6 +74,8 @@ function CategoryItems() {
       </DropdownMenuItem>
     );
   }
+
+  ///////////////////////////////////////
 
   return (
     <>

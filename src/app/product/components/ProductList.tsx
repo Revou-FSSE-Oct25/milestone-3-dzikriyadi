@@ -2,9 +2,9 @@ import { Product } from "@/types/product";
 import { ProductCard } from "./ProductCard";
 import Link from "next/link";
 
-type ProductListProps = {
+interface ProductListProps {
   products: Product[];
-};
+}
 
 export function ProductList({ products }: ProductListProps) {
   return (

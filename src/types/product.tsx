@@ -23,6 +23,7 @@ export interface Category {
   updatedAt: string;
 }
 
+/////////////////////////////////
 // export interface CategorySectionProps extends React.HTMLAttributes<HTMLDivElement> {
 //   title?: string;
 //   subtitle?: string;
