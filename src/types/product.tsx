@@ -16,6 +16,7 @@ export type Product = {
 export interface Category {
   id: number;
   title: string;
+  name: string;
   slug: string;
   image: string;
   creationAt: string;
