@@ -23,19 +23,21 @@ export function ProductCard({ product }: ProductCardProps) {
             // plain img keeps compatibility with external urls
             <img
               src={imageUrl}
-              alt={product.name}
+              alt={product.title}
               className="w-full h-full object-cover md:h transition-transform duration-300 group-hover:scale-105 "
             />
           ) : (
-            <div className="text-sm text-gray-500">No image</div>
+            <div className="text-sm ">No image</div>
           )}
         </div>
 
         <div className="mt-4">
-          <h3 className="text-lg font-medium text-white">{product.name}</h3>
-          <p className="mt-1 text-sm text-gray-400">{categoryName}</p>
+          <h3 className="text-lg font-medium line-clamp-2 text-base leading-snug">
+            {product.title}
+          </h3>
+          <p className="mt-1 text-sm ">{categoryName}</p>
           <div className="mt-3 flex items-center justify-between">
-            <span className="text-base font-light text-gray-200">
+            <span className="text-base font-light ">
               ${product.price.toFixed(2)}
             </span>
             <span />
@@ -43,10 +45,10 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
 
-      <div className="mt-4 pt-4 border-t border-white-800">
+      <div className="mt-4 pt-4 border-t border-white-800 justify-end">
         <Link
           href={`/product/${product.id}`}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white-700 px-3 py-2 text-sm text-gray-200 hover:bg-white/5 transition"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-white-700 px-3 py-2 text-sm  hover:bg-white/5 transition"
         >
           View Detail
         </Link>

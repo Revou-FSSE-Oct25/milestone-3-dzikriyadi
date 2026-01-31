@@ -19,8 +19,8 @@ import {
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Product", href: "./product" },
-  { name: "About", href: "./about" },
+  { name: "Product", href: "/product" },
+  { name: "About", href: "/about" },
 ];
 
 function CategoryItems() {

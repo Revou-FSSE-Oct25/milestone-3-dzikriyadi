@@ -24,13 +24,13 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
   };
 
   return (
-    <div className="min-h-screen 0 text-white">
+    <div className="min-h-screen 0 ">
       {/* Top Navigation */}
       <div className="sticky top-0 z-40 border-b border-white-800  backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <button
             onClick={handleBack}
-            className="inline-flex items-center gap-2 text-sm  hover:text-white transition-colors"
+            className="inline-flex items-center gap-2 text-sm  hover:text-grey transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             Back
@@ -50,7 +50,7 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
                     ? product.images[0]
                     : "https://via.placeholder.com/150"
                 }
-                alt={product.name}
+                alt={product.title}
                 className="w-full h-full object-contain"
               />
             </div>
@@ -76,7 +76,7 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
 
               {/* Title */}
               <h1 className="mt-6 text-4xl lg:text-5xl font-light leading-tight">
-                {product.name}
+                {product.title}
               </h1>
 
               {/* Price */}
@@ -133,14 +133,14 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
               <div className="flex flex-col gap-3 pt-6">
                 <Button
                   onClick={handleCheckout}
-                  className="w-full h-12 bg-white  hover:bg-gray-100 font-medium text-base rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full h-12 dark:bg-white light:text-black hover:light:text-black hover:bg-gray-700 font-medium text-base rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
                   <ShoppingCart className="w-4 h-4" />
                   Add to Cart & Checkout
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full h-12 bg-transparent border border-white-700 text-white hover:bg-slate-900 hover:border-white-600 font-medium text-base rounded-lg transition-colors"
+                  className="w-full h-12 bg-transparent border border-white-700  hover:bg-gray-100 hover:border-white-600 font-medium text-base rounded-lg transition-colors"
                 >
                   Add to Wishlist
                 </Button>

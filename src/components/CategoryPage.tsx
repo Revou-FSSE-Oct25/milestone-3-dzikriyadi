@@ -126,7 +126,7 @@ function CategoryPage() {
               <button
                 onClick={() => api?.scrollPrev()}
                 disabled={!canScrollPrev}
-                className="relative w-10 h-10 rounded-full   disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center justify-center text-white transition-colors shadow-lg hover:shadow-xl"
+                className="relative w-10 h-10 rounded-full   disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center justify-center  transition-colors shadow-lg hover:shadow-xl"
                 aria-label="Previous"
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -134,7 +134,7 @@ function CategoryPage() {
               <button
                 onClick={() => api?.scrollNext()}
                 disabled={!canScrollNext}
-                className="relative w-10 h-10 rounded-full  disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center justify-center text-white transition-colors shadow-lg hover:shadow-xl"
+                className="relative w-10 h-10 rounded-full  disabled:bg-gray-600 disabled:cursor-not-allowed flex items-center justify-center  transition-colors shadow-lg hover:shadow-xl"
                 aria-label="Next"
               >
                 <ChevronRight className="w-5 h-5" />
@@ -145,7 +145,7 @@ function CategoryPage() {
 
         {loading && (
           <div className="flex justify-center items-center py-12">
-            <p className="text-gray-400">Loading categories...</p>
+            <p className="">Loading categories...</p>
           </div>
         )}
 

@@ -42,9 +42,17 @@ export default async function SsrProductDetailsPage({ params }: PageProps) {
 
   return (
     <>
-      <NavigationBar />
+      {/* <NavigationBar />
       <ProductDetailPage product={product} />
-      <Footer />
+      <Footer /> */}
+
+      <main className="font-mono w-full">
+        <NavigationBar />
+        <section className=" ">
+          <ProductDetailPage product={product} />
+        </section>
+        <Footer />
+      </main>
     </>
   );
 }

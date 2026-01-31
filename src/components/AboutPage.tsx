@@ -20,7 +20,7 @@ export default function AboutPage({
 }: AboutPageProps) {
   return (
     <section className="max-w-5xl mx-auto px-6 py-12">
-      <div className="prose prose-invert max-w-none text-gray-300">
+      <div className="prose prose-invert max-w-none ">
         <h1 className="text-3xl font-light">{title}</h1>
         <p className="mt-4 text-base leading-relaxed">{description}</p>
 
@@ -38,10 +38,10 @@ export default function AboutPage({
         <div className="mt-4 space-y-6">
           {faqs.map((faq) => (
             <div key={faq.question}>
-              <p className="text-sm text-gray-400 uppercase tracking-wider">
+              <p className="text-sm  uppercase tracking-wider">
                 {faq.question}
               </p>
-              <p className="mt-2 text-base text-gray-300">{faq.answer}</p>
+              <p className="mt-2 text-base ">{faq.answer}</p>
             </div>
           ))}
         </div>

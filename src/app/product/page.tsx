@@ -37,7 +37,7 @@ export default function PageProducts() {
   return (
     <main className="font-mono w-full">
       <NavigationBar />
-      <section className="mt-10 md:mx-5 lg:w-[68rem] lg:m-auto">
+      <section className=" md:px-5 lg:w-[68rem] lg:m-auto lg:mt-10 mt-10">
         <div>
           {isLoading && <Spinner />}
           {errorMessage && (
