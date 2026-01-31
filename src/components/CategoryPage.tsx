@@ -100,7 +100,7 @@ function CategoryPage() {
                       {/* Background Image */}
                       <img
                         src={category.image}
-                        alt={category.name}
+                        alt={category.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
 
@@ -110,7 +110,7 @@ function CategoryPage() {
                       {/* Content */}
                       <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
                         <h3 className="text-2xl font-bold mb-2">
-                          {category.name}
+                          {category.title}
                         </h3>
                       </div>
 
