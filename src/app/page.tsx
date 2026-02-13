@@ -1,31 +1,25 @@
-"use client";
-import CategoryPage from "@/components/CategoryPage";
-import Footer from "@/components/Footer";
-import HeroPage from "@/components/HeroPage";
-import NavigationBar from "@/components/NavigationBar";
-
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CarouselCat from "@/components/CarouselCat";
 
 export default function Home() {
   return (
     <>
-      <main className="font-mono w-full">
-        <NavigationBar />
+      <Navbar />
+      <main className="mx-auto max-w-lg md:max-w-xl lg:max-w-4xl m-auto items-center">
         <section>
-          <HeroPage />
+          <div className="justify-center items-center h-100 flex flex-col w-full border-b ">
+            <h1 className="text-center  text-3xl/14 md:text-4xl/14 lg:text-5xl/21 w-full lg:w-3xl font-bold my-10 px-10 ">
+              "Discover Our Products with Best Offer."
+            </h1>
+          </div>
         </section>
         <section>
-          <CategoryPage />
+          <CarouselCat />
         </section>
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
-
-// About / SSG
-
-// Benerin Style Product Card
-// Tambah Category Card di Home
-
-// README

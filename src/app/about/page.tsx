@@ -1,7 +1,8 @@
 //Contoh SSG
+
 import AboutPage, { AboutPageProps } from "@/components/AboutPage";
 import Footer from "@/components/Footer";
-import NavigationBar from "@/components/NavigationBar";
+import Navbar from "@/components/Navbar";
 
 // export const revalidate = 3600; // SSG with ISR: cara agar bisa tervalidasi setiap 1 jam
 
@@ -50,7 +51,7 @@ export default async function Page() {
 
   return (
     <main className="font-mono w-full">
-      <NavigationBar />
+      <Navbar />
       <section>
         <AboutPage {...aboutData} />
       </section>
